@@ -50,12 +50,6 @@ class simple_functions(unittest.TestCase):
         self.assertEqual(root(3,5), math.pow(3,1/5))
         self.assertEqual(root(2,1/2), 4)
         self.assertEqual(round(root(2,-2)), round(math.pow(2,-1/2)))
-        
-
-    def test_abs(self):
-        self.assertEqual(absolute(1), 1)
-        self.assertEqual(absolute(0),0)
-        self.assertEqual(absolute(-1),1)
     
     def test_roundup(self):
         self.assertEqual(roundup(2.00000), round(2.00000))
@@ -63,22 +57,26 @@ class simple_functions(unittest.TestCase):
 
     
     
-# class scientific_tests(unittest.TestCase):
+class scientific_tests(unittest.TestCase):
 
-#     def test_sin(self):
-#       #test sin, inverse_sin and cosc
+    def test_abs(self):
+        self.assertEqual(absolute(1), 1)
+        self.assertEqual(absolute(0),0)
+        self.assertEqual(absolute(-1),1)
 
-#     def test_cos(self):
-#       #test cos, inverse_cos and sec
+    def test_log(self):
+        self.assertEqual(log(1,10), 0.0)
+        self.assertEqual(log(100,10), 2)
+        self.assertEqual(log(10,10), 1.0)
 
-#     def test_tan(self):
-#       #test tan. inverse_tan and cotg
+    def test_ln(self):
+        self.assertEqual(ln(1),0)
+        self.assertEqual(ln(math.e),1)
 
-#     def test_log(self):
-
-#     def test_ln(self):
-
-#     def test_remainder(self):
+    def test_remainder(self):
+        self.assertEqual(remainder(8,2),0 )
+        self.assertEqual(remainder(5,2),1)
+        self.assertEqual(remainder(-10, 2), 0)
 
 
 if __name__ == '__main__':
